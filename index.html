@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Gradient Background</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body id="gradient">
-	<h1>Gradient Background Generator</h1>
-	<input class="color1" type="color" name="color1" value="#00ff00">
-	<input class="color2" type="color" name="color2" value="#ff0000">
-	<h2>Current CSS Background</h2>
-	<h3></h3>
+
+	<div class="container">
+
+		<div class="title">
+			<h1>Gradient Background Generator</h1>
+		</div>
+
+		<div class="colors">
+			<input autocomplete="off" class="color1" type="color" name="color1" value="#00ff00">
+			<input autocomplete="off" class="color2" type="color" name="color2" value="#ff0000">
+		</div>
+
+		<div class="title2">
+			<h2>Current CSS Background</h2>
+			<h3></h3>
+		</div>
+
+		<div class="gradients">
+			<img onclick="horizontal();" src="images/horizontal.svg" alt="vertical">
+			<img onclick="vertical();" src="images/vertical.svg" alt="horizontal">
+			<img onclick="diagonal();" src="images/diagonal.svg" alt="diagonal">
+			<img onclick="radial();" src="images/radial.svg" alt="radial">
+		</div>
+		
+	</div>
+
 	<script type="text/javascript" src="script.js"></script>
+
 </body>
 </html>

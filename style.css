@@ -1,11 +1,15 @@
+html {
+    width: 100%;
+    height: 100vh;
+}
+
 body {
 	font: 'Raleway', sans-serif;
     color: rgba(0,0,0,.5);
     text-align: center;
     text-transform: uppercase;
     letter-spacing: .5em;
-    top: 15%;
-	background: linear-gradient(to right, green , red); /* Standard syntax */
+    background: linear-gradient(to right, rgb(0, 255, 0) , rgb(255, 0, 0)); /* Standard syntax */
 }
 
 h1 {
@@ -23,4 +27,46 @@ h3 {
     text-align: center;
     text-transform: none;
     letter-spacing: 0.01em;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 10% 20% auto 20% 10%;
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: "title title title title title"
+                         ". gradients colors . ."
+                         ". gradients title2 . ."
+                         ". gradients . . ."
+                         ". gradients . . ."
+}
+
+.title {
+    grid-area: title;
+}
+
+.title2 {
+    grid-area: title2;
+}
+
+.colors {
+    grid-area: colors;
+}
+
+.gradients {
+    grid-area: gradients;
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    justify-items: center;
+    align-items: center;
+    row-gap: 5vh;
+}
+
+.gradients img {
+    width: 80px;
+    opacity: 0.75;
+    cursor: pointer;
+}
+
+.gradients img:hover {
+    opacity: 1;
 }
