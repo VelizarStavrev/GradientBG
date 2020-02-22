@@ -8,6 +8,12 @@
 </head>
 <body id="gradient">
 
+	<div class="gradientcontainer">
+		<header id="header"></header>
+		<main id="main"></main>
+		<footer id="footer"></footer>
+	</div>
+
 	<div class="container">
 
 		<div class="title">
@@ -17,6 +23,9 @@
 		<div class="colors">
 			<input autocomplete="off" class="color1" type="color" name="color1" value="#00ff00">
 			<input autocomplete="off" class="color2" type="color" name="color2" value="#ff0000">
+			<input id="color3" autocomplete="off" class="color3" type="color" name="color3" value="#0000ff">
+			<input id="color4" autocomplete="off" class="color4" type="color" name="color4" value="#0f0f0f">
+			<input id="color5" autocomplete="off" class="color5" type="color" name="color5" value="#f0f0f0">
 		</div>
 
 		<div class="title2">
@@ -25,10 +34,24 @@
 		</div>
 
 		<div class="gradients">
-			<img onclick="horizontal();" src="images/horizontal.svg" alt="vertical">
-			<img onclick="vertical();" src="images/vertical.svg" alt="horizontal">
-			<img onclick="diagonal();" src="images/diagonal.svg" alt="diagonal">
-			<img onclick="radial();" src="images/radial.svg" alt="radial">
+			<img id="horizontal" onclick="setGradient(1);" src="images/horizontal.svg" alt="horizontal">
+			<img id="vertical" onclick="setGradient(2);" src="images/vertical.svg" alt="vertical">
+			<img id="diagonal" onclick="setGradient(3);" src="images/diagonal.svg" alt="diagonal">
+			<img id="radial" onclick="setGradient(4);" src="images/radial.svg" alt="radial">
+		</div>
+
+		<div class="options">
+			<img id="colorincrease" onclick="setGradient(5);" src="images/colorincrease.svg" alt="colorincrease">
+			<img id="colorreduce" onclick="setGradient(6);" src="images/colorreduce.svg" alt="colorreduce">
+			<div class="angle">
+				<img id="angle" onclick="angle();" src="images/angle.svg" alt="angle">
+				<div id="anglepick" class="anglepick"><input id="angleinput" type="number" min="0" max="360" value="0" autocomplete="off" required></div>
+			</div>
+			<div class="sectiondiv">
+				<div onclick="header();" class="header"><img src="images/section4.svg" alt="section"></div>
+				<div onclick="main();" class="main"><img src="images/section4.svg" alt="section"></div>
+				<div onclick="footer();" class="footer"><img src="images/section4.svg" alt="section"></div>
+			</div>
 		</div>
 		
 	</div>
