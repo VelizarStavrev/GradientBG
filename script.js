@@ -1,6 +1,9 @@
 var css = document.querySelector("h3");
 var color1 = document.querySelector(".color1");
 var color2 = document.querySelector(".color2");
+var color3 = document.querySelector(".color3");
+var color4 = document.querySelector(".color4");
+var color5 = document.querySelector(".color5");
 var body = document.getElementById("gradient");
 
 var header = document.getElementById("header");
@@ -84,17 +87,79 @@ function opacityLow() {
 }
 
 function setGradient(number) {
+	var headericon = document.getElementById("headericon").classList.contains("active");
+	var mainicon = document.getElementById("mainicon").classList.contains("active");
+	var footericon = document.getElementById("footericon").classList.contains("active");
+
 	switch (number) {
 		// horizontal
 		case 1:
-			body.style.background = 
-			"linear-gradient(to left, " 
-			+ color1.value 
-			+ ", " 
-			+ color2.value 
-			+ ")";
-		
-			css.textContent = body.style.background + ";";
+			// header
+			if (headericon != true) {
+				header.style.background = 
+					"linear-gradient(to left, " 
+					+ "gray"
+					+ ", " 
+					+ "gray" 
+					+ ")";
+			}
+			else {
+				header.style.background = 
+					"linear-gradient(to left, " 
+					+ color1.value 
+					+ ", " 
+					+ color2.value 
+					+ ")";
+			}
+
+			// main
+			if (mainicon != true) {
+				main.style.background = 
+					"linear-gradient(to left, " 
+					+ "gray"
+					+ ", " 
+					+ "gray" 
+					+ ")";
+			}
+			else {
+				main.style.background = 
+					"linear-gradient(to left, " 
+					+ color1.value 
+					+ ", " 
+					+ color2.value 
+					+ ")";
+			}
+
+			// footer
+			if (footericon != true) {
+				footer.style.background = 
+					"linear-gradient(to left, " 
+					+ "gray"
+					+ ", " 
+					+ "gray" 
+					+ ")";
+			}
+			else {
+				footer.style.background = 
+					"linear-gradient(to left, " 
+					+ color1.value 
+					+ ", " 
+					+ color2.value 
+					+ ")";
+			}
+
+			if (headericon != false) {
+				css.textContent = header.style.background + ";";
+			}
+			else if (mainicon != false) {
+				css.textContent = main.style.background + ";";
+			}
+			else if (footericon != false) {
+				css.textContent = footer.style.background + ";";
+			}
+			else {
+				css.textContent = "Please select a section!";
+			}
 
 			opacityLow();
 			angleClose();
@@ -105,14 +170,72 @@ function setGradient(number) {
 
 		// vertical
 		case 2:
-			body.style.background = 
-			"linear-gradient(to top, " 
-			+ color1.value 
-			+ ", " 
-			+ color2.value 
-			+ ")";
-			
-			css.textContent = body.style.background + ";";
+			// header
+			if (headericon != true) {
+				header.style.background = 
+					"linear-gradient(to top, " 
+					+ "gray"
+					+ ", " 
+					+ "gray" 
+					+ ")";
+			}
+			else {
+				header.style.background = 
+					"linear-gradient(to top, " 
+					+ color1.value 
+					+ ", " 
+					+ color2.value 
+					+ ")";
+			}
+
+			// main
+			if (mainicon != true) {
+				main.style.background = 
+					"linear-gradient(to top, " 
+					+ "gray"
+					+ ", " 
+					+ "gray" 
+					+ ")";
+			}
+			else {
+				main.style.background = 
+					"linear-gradient(to top, " 
+					+ color1.value 
+					+ ", " 
+					+ color2.value 
+					+ ")";
+			}
+
+			// footer
+			if (footericon != true) {
+				footer.style.background = 
+					"linear-gradient(to top, " 
+					+ "gray"
+					+ ", " 
+					+ "gray" 
+					+ ")";
+			}
+			else {
+				footer.style.background = 
+					"linear-gradient(to top, " 
+					+ color1.value 
+					+ ", " 
+					+ color2.value 
+					+ ")";
+			}
+
+			if (headericon != false) {
+				css.textContent = header.style.background + ";";
+			}
+			else if (mainicon != false) {
+				css.textContent = main.style.background + ";";
+			}
+			else if (footericon != false) {
+				css.textContent = footer.style.background + ";";
+			}
+			else {
+				css.textContent = "Please select a section!";
+			}
 
 			opacityLow();
 			angleClose();
@@ -123,14 +246,72 @@ function setGradient(number) {
 
 		// diagonal
 		case 3:
-			body.style.background = 
-			"linear-gradient(315deg, " 
-			+ color1.value 
-			+ ", " 
-			+ color2.value 
-			+ ")";
+			// header
+			if (headericon != true) {
+				header.style.background = 
+					"linear-gradient(315deg, " 
+					+ "gray"
+					+ ", " 
+					+ "gray" 
+					+ ")";
+			}
+			else {
+				header.style.background = 
+					"linear-gradient(315deg, " 
+					+ color1.value 
+					+ ", " 
+					+ color2.value 
+					+ ")";
+			}
 
-			css.textContent = body.style.background + ";";
+			// main
+			if (mainicon != true) {
+				main.style.background = 
+					"linear-gradient(315deg, " 
+					+ "gray"
+					+ ", " 
+					+ "gray" 
+					+ ")";
+			}
+			else {
+				main.style.background = 
+					"linear-gradient(315deg, " 
+					+ color1.value 
+					+ ", " 
+					+ color2.value 
+					+ ")";
+			}
+
+			// footer
+			if (footericon != true) {
+				footer.style.background = 
+					"linear-gradient(315deg, " 
+					+ "gray"
+					+ ", " 
+					+ "gray" 
+					+ ")";
+			}
+			else {
+				footer.style.background = 
+					"linear-gradient(315deg, " 
+					+ color1.value 
+					+ ", " 
+					+ color2.value 
+					+ ")";
+			}
+
+			if (headericon != false) {
+				css.textContent = header.style.background + ";";
+			}
+			else if (mainicon != false) {
+				css.textContent = main.style.background + ";";
+			}
+			else if (footericon != false) {
+				css.textContent = footer.style.background + ";";
+			}
+			else {
+				css.textContent = "Please select a section!";
+			}
 
 			opacityLow();
 			angleClose();
@@ -141,14 +322,72 @@ function setGradient(number) {
 
 		// radial
 		case 4:
-			body.style.background = 
-			"radial-gradient(" 
-			+ color1.value 
-			+ ", " 
-			+ color2.value 
-			+ ")";
+			// header
+			if (headericon != true) {
+				header.style.background = 
+					"radial-gradient("
+					+ "gray"
+					+ ", " 
+					+ "gray" 
+					+ ")";
+			}
+			else {
+				header.style.background = 
+					"radial-gradient(" 
+					+ color1.value 
+					+ ", " 
+					+ color2.value 
+					+ ")";
+			}
 
-			css.textContent = body.style.background + ";";
+			// main
+			if (mainicon != true) {
+				main.style.background = 
+					"radial-gradient(" 
+					+ "gray"
+					+ ", " 
+					+ "gray" 
+					+ ")";
+			}
+			else {
+				main.style.background = 
+					"radial-gradient("
+					+ color1.value 
+					+ ", " 
+					+ color2.value 
+					+ ")";
+			}
+
+			// footer
+			if (footericon != true) {
+				footer.style.background = 
+					"radial-gradient(" 
+					+ "gray"
+					+ ", " 
+					+ "gray" 
+					+ ")";
+			}
+			else {
+				footer.style.background = 
+					"radial-gradient(" 
+					+ color1.value 
+					+ ", " 
+					+ color2.value 
+					+ ")";
+			}
+
+			if (headericon != false) {
+				css.textContent = header.style.background + ";";
+			}
+			else if (mainicon != false) {
+				css.textContent = main.style.background + ";";
+			}
+			else if (footericon != false) {
+				css.textContent = footer.style.background + ";";
+			}
+			else {
+				css.textContent = "Please select a section!";
+			}
 
 			opacityLow();
 			angleClose();
@@ -194,15 +433,79 @@ function setGradient(number) {
 
 		// page load
 		default: 
-			body.style.background = 
-			"linear-gradient(to left, " 
-			+ color1.value 
-			+ ", " 
-			+ color2.value 
-			+ ")";
-		
-			css.textContent = body.style.background + ";";
+			// header
+			if (headericon != false) {
+				header.style.background = 
+					"linear-gradient(to left, " 
+					+ color1.value 
+					+ ", " 
+					+ color2.value 
+					+ ")";
+				
+					// css.textContent = header.style.background + ";";
+			}
+			else {
+				header.style.background = 
+					"linear-gradient(to left, " 
+					+ "gray"
+					+ ", " 
+					+ "gray" 
+					+ ")";
+			}
+			
+			// main
+			if (mainicon != false) {
+				main.style.background = 
+					"linear-gradient(to left, " 
+					+ color1.value 
+					+ ", " 
+					+ color2.value 
+					+ ")";
+				
+					// css.textContent = main.style.background + ";";
+			}
+			else {
+				main.style.background = 
+					"linear-gradient(to left, " 
+					+ "gray"
+					+ ", " 
+					+ "gray" 
+					+ ")";
+			}
 
+			// footer
+			if (footericon != false) {
+				footer.style.background = 
+					"linear-gradient(to left, " 
+					+ color1.value 
+					+ ", " 
+					+ color2.value 
+					+ ")";
+				
+					// css.textContent = footer.style.background + ";";
+			}
+			else {
+				footer.style.background = 
+					"linear-gradient(to left, " 
+					+ "gray"
+					+ ", " 
+					+ "gray" 
+					+ ")";
+			}
+
+			if (headericon != false) {
+				css.textContent = header.style.background + ";";
+			}
+			else if (mainicon != false) {
+				css.textContent = main.style.background + ";";
+			}
+			else if (footericon != false) {
+				css.textContent = footer.style.background + ";";
+			}
+			else {
+				css.textContent = "Please select a section!";
+			}
+			
 			opacityLow();
 			document.getElementById("horizontal").removeEventListener("mouseover", horizontalOpacityHigh);
 			document.getElementById("horizontal").removeEventListener("mouseout", horizontalOpacityLow);
@@ -232,17 +535,82 @@ function angleFunc() {
 document.getElementById("angleinput").addEventListener("input", angleChange);
 function angleChange() {
 	angle = document.getElementById("angleinput").value;
+	var headericon = document.getElementById("headericon").classList.contains("active");
+	var mainicon = document.getElementById("mainicon").classList.contains("active");
+	var footericon = document.getElementById("footericon").classList.contains("active");
+	
+	// header
+	if (headericon != true) {
+		header.style.background = 
+			"linear-gradient(315deg, " 
+			+ "gray"
+			+ ", " 
+			+ "gray" 
+			+ ")";
+	}
+	else {
+		header.style.background = 
+			"linear-gradient("
+			+ angle
+			+ "deg, " 
+			+ color1.value 
+			+ ", " 
+			+ color2.value 
+			+ ")";
+	}
 
-	body.style.background = 
-	"linear-gradient("
-	+ angle
-	+ "deg, " 
-	+ color1.value 
-	+ ", " 
-	+ color2.value 
-	+ ")";
+	// main
+	if (mainicon != true) {
+		main.style.background = 
+			"linear-gradient(315deg, " 
+			+ "gray"
+			+ ", " 
+			+ "gray" 
+			+ ")";
+	}
+	else {
+		main.style.background = 
+			"linear-gradient("
+			+ angle
+			+ "deg, " 
+			+ color1.value 
+			+ ", " 
+			+ color2.value 
+			+ ")";
+	}
 
-	css.textContent = body.style.background + ";";
+	// footer
+	if (footericon != true) {
+		footer.style.background = 
+			"linear-gradient(315deg, " 
+			+ "gray"
+			+ ", " 
+			+ "gray" 
+			+ ")";
+	}
+	else {
+		footer.style.background = 
+			"linear-gradient("
+			+ angle
+			+ "deg, " 
+			+ color1.value 
+			+ ", " 
+			+ color2.value 
+			+ ")";
+	}
+
+	if (headericon != false) {
+		css.textContent = header.style.background + ";";
+	}
+	else if (mainicon != false) {
+		css.textContent = main.style.background + ";";
+	}
+	else if (footericon != false) {
+		css.textContent = footer.style.background + ";";
+	}
+	else {
+		css.textContent = "Please select a section!";
+	}
 }
 
 function angleClose() {
@@ -254,87 +622,147 @@ function angleClose() {
 
 // HEADER
 function headerFunc() {
-	document.getElementById("gradient").style.background = "gray";
 	var headericon = document.getElementById("headericon").classList.contains("active");
+	var horizontalcheck = document.getElementById("horizontal").style.opacity;
+	var verticalcheck = document.getElementById("vertical").style.opacity;
+	var diagonalcheck = document.getElementById("diagonal").style.opacity;
+	var radialcheck = document.getElementById("radial").style.opacity;
+	var anglecheck = document.getElementById("angle").style.opacity;
 
 	if (headericon != true) {
 		document.getElementById("headericon").classList.add("active");
-		header.style.background = 
-			"linear-gradient(to left, " 
-			+ color1.value 
-			+ ", " 
-			+ color2.value 
-			+ ")";
-		
-			css.textContent = header.style.background + ";";
+
+		if (horizontalcheck == "1") {
+			setGradient(1);
+		}
+		else if (verticalcheck == "1") {
+			setGradient(2);
+		}
+		else if (diagonalcheck == "1") {
+			setGradient(3);
+		}
+		else if (radialcheck == "1") {
+			setGradient(4);
+		}
+		else if (anglecheck == "1") {
+			angleChange();
+		}
 	}
 	else {
 		document.getElementById("headericon").classList.remove("active");
-		header.style.background = 
-			"linear-gradient(to left, " 
-			+ "gray"
-			+ ", " 
-			+ "gray" 
-			+ ")";
 		
-			css.textContent = header.style.background + ";";
+		if (horizontalcheck == "1") {
+			setGradient(1);
+		}
+		else if (verticalcheck == "1") {
+			setGradient(2);
+		}
+		else if (diagonalcheck == "1") {
+			setGradient(3);
+		}
+		else if (radialcheck == "1") {
+			setGradient(4);
+		}
+		else if (anglecheck == "1") {
+			angleChange();
+		}
 	}
 }
 
 // MAIN
 function mainFunc() {
-	document.getElementById("gradient").style.background = "gray";
 	var mainicon = document.getElementById("mainicon").classList.contains("active");
+	var horizontalcheck = document.getElementById("horizontal").style.opacity;
+	var verticalcheck = document.getElementById("vertical").style.opacity;
+	var diagonalcheck = document.getElementById("diagonal").style.opacity;
+	var radialcheck = document.getElementById("radial").style.opacity;
+	var anglecheck = document.getElementById("angle").style.opacity;
 
 	if (mainicon != true) {
 		document.getElementById("mainicon").classList.add("active");
-		main.style.background = 
-			"linear-gradient(to left, " 
-			+ color1.value 
-			+ ", " 
-			+ color2.value 
-			+ ")";
-		
-			css.textContent = main.style.background + ";";
+
+		if (horizontalcheck == "1") {
+			setGradient(1);
+		}
+		else if (verticalcheck == "1") {
+			setGradient(2);
+		}
+		else if (diagonalcheck == "1") {
+			setGradient(3);
+		}
+		else if (radialcheck == "1") {
+			setGradient(4);
+		}
+		else if (anglecheck == "1") {
+			angleChange();
+		}
 	}
 	else {
 		document.getElementById("mainicon").classList.remove("active");
-		main.style.background = 
-			"linear-gradient(to left, " 
-			+ "gray"
-			+ ", " 
-			+ "gray" 
-			+ ")";
 		
-			css.textContent = main.style.background + ";";
+		if (horizontalcheck == "1") {
+			setGradient(1);
+		}
+		else if (verticalcheck == "1") {
+			setGradient(2);
+		}
+		else if (diagonalcheck == "1") {
+			setGradient(3);
+		}
+		else if (radialcheck == "1") {
+			setGradient(4);
+		}
+		else if (anglecheck == "1") {
+			angleChange();
+		}
 	}
 }
 
 // FOOTER
 function footerFunc() {
-	document.getElementById("gradient").style.background = "gray";
 	var footericon = document.getElementById("footericon").classList.contains("active");
+	var horizontalcheck = document.getElementById("horizontal").style.opacity;
+	var verticalcheck = document.getElementById("vertical").style.opacity;
+	var diagonalcheck = document.getElementById("diagonal").style.opacity;
+	var radialcheck = document.getElementById("radial").style.opacity;
+	var anglecheck = document.getElementById("angle").style.opacity;
 
 	if (footericon != true) {
 		document.getElementById("footericon").classList.add("active");
-		footer.style.background = 
-			"linear-gradient(to left, " 
-			+ color1.value 
-			+ ", " 
-			+ color2.value 
-			+ ")";
-		
-			css.textContent = footer.style.background + ";";
+
+		if (horizontalcheck == "1") {
+			setGradient(1);
+		}
+		else if (verticalcheck == "1") {
+			setGradient(2);
+		}
+		else if (diagonalcheck == "1") {
+			setGradient(3);
+		}
+		else if (radialcheck == "1") {
+			setGradient(4);
+		}
+		else if (anglecheck == "1") {
+			angleChange();
+		}
 	}
 	else {
 		document.getElementById("footericon").classList.remove("active");
-		footer.style.background = 
-			"linear-gradient(to left, " 
-			+ "gray"
-			+ ", " 
-			+ "gray" 
-			+ ")";
 		
-			css.textContent = footer.style.background + ";";
+		if (horizontalcheck == "1") {
+			setGradient(1);
+		}
+		else if (verticalcheck == "1") {
+			setGradient(2);
+		}
+		else if (diagonalcheck == "1") {
+			setGradient(3);
+		}
+		else if (radialcheck == "1") {
+			setGradient(4);
+		}
+		else if (anglecheck == "1") {
+			angleChange();
+		}
 	}
 }
