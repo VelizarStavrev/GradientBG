@@ -3,15 +3,19 @@ var color1 = document.querySelector(".color1");
 var color2 = document.querySelector(".color2");
 var body = document.getElementById("gradient");
 
+var header = document.getElementById("header");
+var main = document.getElementById("main");
+var footer = document.getElementById("footer");
+
 window.addEventListener("load", setGradient);
 
 color1.addEventListener("input", setGradient);
 
 color2.addEventListener("input", setGradient);
 
-header();
-main();
-footer();
+headerFunc();
+mainFunc();
+footerFunc();
 document.getElementById("headericon").classList.add("active");
 document.getElementById("mainicon").classList.add("active");
 document.getElementById("footericon").classList.add("active");
@@ -32,6 +36,10 @@ function radialOpacityLow() {
 	document.getElementById("radial").style.opacity = "0.5";
 }
 
+function angleOpacityLow() {
+	document.getElementById("angle").style.opacity = "0.5";
+}
+
 function horizontalOpacityHigh() {
 	document.getElementById("horizontal").style.opacity = "1";
 }
@@ -48,11 +56,16 @@ function radialOpacityHigh() {
 	document.getElementById("radial").style.opacity = "1";
 }
 
+function angleOpacityHigh() {
+	document.getElementById("angle").style.opacity = "1";
+}
+
 function opacityLow() {
 	document.getElementById("horizontal").style.opacity = "0.5";
 	document.getElementById("vertical").style.opacity = "0.5";
 	document.getElementById("diagonal").style.opacity = "0.5";
 	document.getElementById("radial").style.opacity = "0.5";
+	document.getElementById("angle").style.opacity = "0.5";
 
 	document.getElementById("horizontal").addEventListener("mouseover", horizontalOpacityHigh);
 	document.getElementById("horizontal").addEventListener("mouseout", horizontalOpacityLow);
@@ -65,6 +78,9 @@ function opacityLow() {
 
 	document.getElementById("radial").addEventListener("mouseover", radialOpacityHigh);
 	document.getElementById("radial").addEventListener("mouseout", radialOpacityLow);
+
+	document.getElementById("angle").addEventListener("mouseover", angleOpacityHigh);
+	document.getElementById("angle").addEventListener("mouseout", angleOpacityLow);
 }
 
 function setGradient(number) {
@@ -81,6 +97,7 @@ function setGradient(number) {
 			css.textContent = body.style.background + ";";
 
 			opacityLow();
+			angleClose();
 			document.getElementById("horizontal").removeEventListener("mouseover", horizontalOpacityHigh);
 			document.getElementById("horizontal").removeEventListener("mouseout", horizontalOpacityLow);
 			document.getElementById("horizontal").style.opacity = "1";
@@ -98,6 +115,7 @@ function setGradient(number) {
 			css.textContent = body.style.background + ";";
 
 			opacityLow();
+			angleClose();
 			document.getElementById("vertical").removeEventListener("mouseover", verticalOpacityHigh);
 			document.getElementById("vertical").removeEventListener("mouseout", verticalOpacityLow);
 			document.getElementById("vertical").style.opacity = "1";
@@ -115,6 +133,7 @@ function setGradient(number) {
 			css.textContent = body.style.background + ";";
 
 			opacityLow();
+			angleClose();
 			document.getElementById("diagonal").removeEventListener("mouseover", diagonalOpacityHigh);
 			document.getElementById("diagonal").removeEventListener("mouseout", diagonalOpacityLow);
 			document.getElementById("diagonal").style.opacity = "1";
@@ -132,6 +151,7 @@ function setGradient(number) {
 			css.textContent = body.style.background + ";";
 
 			opacityLow();
+			angleClose();
 			document.getElementById("radial").removeEventListener("mouseover", radialOpacityHigh);
 			document.getElementById("radial").removeEventListener("mouseout", radialOpacityLow);
 			document.getElementById("radial").style.opacity = "1";
@@ -192,16 +212,19 @@ function setGradient(number) {
 }
 
 // ANGLE
-function angle() {
+function angleFunc() {
 	var visible = document.getElementById("anglepick").style.display;
 	if (visible === "block") {
-		document.getElementById("anglepick").style.display = "none";
-		document.getElementById("angle").style.opacity = "0.5";
+		angleClose();
+		angleChange();
 	}
 	else {
 		document.getElementById("anglepick").style.display = "block";
-		document.getElementById("angle").style.opacity = "1";
+		
 		opacityLow();
+		document.getElementById("angle").style.opacity = "1";
+		document.getElementById("angle").removeEventListener("mouseover", angleOpacityHigh);
+		document.getElementById("angle").removeEventListener("mouseout", angleOpacityLow);
 		angleChange();
 	}
 }
@@ -222,10 +245,16 @@ function angleChange() {
 	css.textContent = body.style.background + ";";
 }
 
+function angleClose() {
+	document.getElementById("anglepick").style.display = "none";
+		document.getElementById("angle").addEventListener("mouseover", angleOpacityHigh);
+		document.getElementById("angle").addEventListener("mouseout", angleOpacityLow);
+		document.getElementById("angleinput").value = "0";
+}
+
 // HEADER
-function header() {
+function headerFunc() {
 	document.getElementById("gradient").style.background = "gray";
-	var header = document.getElementById("header");
 	var headericon = document.getElementById("headericon").classList.contains("active");
 
 	if (headericon != true) {
@@ -253,9 +282,8 @@ function header() {
 }
 
 // MAIN
-function main() {
+function mainFunc() {
 	document.getElementById("gradient").style.background = "gray";
-	var main = document.getElementById("main");
 	var mainicon = document.getElementById("mainicon").classList.contains("active");
 
 	if (mainicon != true) {
@@ -283,9 +311,8 @@ function main() {
 }
 
 // FOOTER
-function footer() {
+function footerFunc() {
 	document.getElementById("gradient").style.background = "gray";
-	var footer = document.getElementById("footer");
 	var footericon = document.getElementById("footericon").classList.contains("active");
 
 	if (footericon != true) {
