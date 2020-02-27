@@ -29,6 +29,7 @@ color7.addEventListener("input", setGradient);
 headerFunc();
 mainFunc();
 footerFunc();
+fullGradientCheck();
 document.getElementById("headericon").classList.add("active");
 document.getElementById("mainicon").classList.add("active");
 document.getElementById("footericon").classList.add("active");
@@ -94,6 +95,20 @@ function opacityLow() {
 
 	document.getElementById("angle").addEventListener("mouseover", angleOpacityHigh);
 	document.getElementById("angle").addEventListener("mouseout", angleOpacityLow);
+}
+
+function fullGradientCheck() {
+	var headericon = document.getElementById("headericon").classList.contains("active");
+	var mainicon = document.getElementById("mainicon").classList.contains("active");
+	var footericon = document.getElementById("footericon").classList.contains("active");
+
+	if (headericon != false && mainicon != false && footericon != false) {
+		document.getElementById("fullgradient").style.visibility = "visible";
+	} else {
+		document.getElementById("fullgradient").style.visibility = "hidden";
+	}
+	
+	document.getElementById("fullgradient").style.background = document.getElementById("main").style.background;
 }
 
 function setGradient(number) {
@@ -192,6 +207,7 @@ function setGradient(number) {
 
 			opacityLow();
 			angleClose();
+			fullGradientCheck();
 			document.getElementById("horizontal").removeEventListener("mouseover", horizontalOpacityHigh);
 			document.getElementById("horizontal").removeEventListener("mouseout", horizontalOpacityLow);
 			document.getElementById("horizontal").style.opacity = "1";
@@ -262,6 +278,7 @@ function setGradient(number) {
 
 			opacityLow();
 			angleClose();
+			fullGradientCheck();
 			document.getElementById("vertical").removeEventListener("mouseover", verticalOpacityHigh);
 			document.getElementById("vertical").removeEventListener("mouseout", verticalOpacityLow);
 			document.getElementById("vertical").style.opacity = "1";
@@ -332,6 +349,7 @@ function setGradient(number) {
 
 			opacityLow();
 			angleClose();
+			fullGradientCheck();
 			document.getElementById("diagonal").removeEventListener("mouseover", diagonalOpacityHigh);
 			document.getElementById("diagonal").removeEventListener("mouseout", diagonalOpacityLow);
 			document.getElementById("diagonal").style.opacity = "1";
@@ -402,6 +420,7 @@ function setGradient(number) {
 
 			opacityLow();
 			angleClose();
+			fullGradientCheck();
 			document.getElementById("radial").removeEventListener("mouseover", radialOpacityHigh);
 			document.getElementById("radial").removeEventListener("mouseout", radialOpacityLow);
 			document.getElementById("radial").style.opacity = "1";
@@ -532,6 +551,7 @@ function setGradient(number) {
 			}
 			
 			opacityLow();
+			fullGradientCheck();
 			document.getElementById("horizontal").removeEventListener("mouseover", horizontalOpacityHigh);
 			document.getElementById("horizontal").removeEventListener("mouseout", horizontalOpacityLow);
 			document.getElementById("horizontal").style.opacity = "1";
@@ -545,6 +565,7 @@ function angleFunc() {
 	if (visible === "block") {
 		angleClose();
 		angleChange();
+		fullGradientCheck();
 	}
 	else {
 		document.getElementById("anglepick").style.display = "block";
@@ -554,6 +575,7 @@ function angleFunc() {
 		document.getElementById("angle").removeEventListener("mouseover", angleOpacityHigh);
 		document.getElementById("angle").removeEventListener("mouseout", angleOpacityLow);
 		angleChange();
+		fullGradientCheck();
 	}
 }
 
@@ -569,6 +591,8 @@ function angleChange() {
 	var colorcheck5 = document.getElementById("color5").style.display;
 	var colorcheck6 = document.getElementById("color6").style.display;
 	var colorcheck7 = document.getElementById("color7").style.display;
+
+	fullGradientCheck();
 
 	if (colorcheck7 === "initial") {
 		var colors = color1.value + ", " + color3.value + ", " + color4.value + ", " + color5.value + ", " + color6.value + ", " + color7.value + ", " + color2.value;
